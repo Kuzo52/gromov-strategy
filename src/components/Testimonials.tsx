@@ -17,58 +17,63 @@ export function Testimonials() {
     }
 
     measure()
+    const id = window.requestAnimationFrame(measure)
     window.addEventListener('resize', measure)
-    return () => window.removeEventListener('resize', measure)
+    return () => {
+      window.cancelAnimationFrame(id)
+      window.removeEventListener('resize', measure)
+    }
   }, [])
 
   return (
-    <section id="testimonials" className="relative overflow-hidden py-8 sm:py-14 md:py-20">
+    <section id="testimonials" className="relative overflow-hidden section-y">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-5 sm:mb-8 md:mb-10">
-          <p className="mb-2 text-xs font-semibold tracking-[0.2em] text-cyber uppercase sm:mb-3">
-            Testimonials
+        <div className="mb-3 sm:mb-6 md:mb-8">
+          <p className="mb-1.5 text-xs font-bold tracking-tighter text-lime lowercase sm:mb-2">
+            отзывы
           </p>
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-champagne text-balance sm:text-4xl md:text-5xl">
-            Голоса клиентов
+          <h2 className="font-display text-3xl font-black tracking-tighter text-white lowercase text-balance sm:text-4xl md:text-5xl">
+            что говорят клиенты
           </h2>
-          <p className="mt-2 text-sm text-mist sm:mt-3 sm:text-base">
+          <p className="mt-1.5 text-sm text-mist sm:mt-2 sm:text-base">
             Свайпните или&nbsp;перетащите карусель.
           </p>
         </div>
 
-        <div ref={viewportRef} className="overflow-hidden">
+        <div ref={viewportRef} className="touch-pan-y overflow-hidden">
           <motion.ul
             ref={trackRef}
             drag="x"
             dragConstraints={{ left: dragLeft, right: 0 }}
-            dragElastic={0.12}
-            dragTransition={{ bounceStiffness: 280, bounceDamping: 28 }}
-            className="flex cursor-grab gap-3 active:cursor-grabbing sm:gap-4"
+            dragElastic={0.14}
+            dragTransition={{ bounceStiffness: 260, bounceDamping: 26 }}
+            className="flex cursor-grab gap-2.5 active:cursor-grabbing sm:gap-3"
+            style={{ touchAction: 'pan-y' }}
           >
             {TESTIMONIALS.map((t, i) => (
               <motion.li
                 key={t.id}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
-                className="glass-plate w-[min(84vw,340px)] shrink-0 rounded-[24px] p-5 select-none sm:w-[360px] sm:p-6"
+                transition={{ duration: 0.4, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
+                className="glass-dense w-[min(86vw,320px)] shrink-0 rounded-[24px] p-4 select-none sm:w-[340px] sm:p-5"
               >
-                <div className="mb-4 flex items-center gap-3">
+                <div className="mb-3 flex items-center gap-3">
                   <img
                     src={t.image}
                     alt={t.name}
-                    className="h-12 w-12 rounded-full object-cover brightness-90"
+                    className="h-11 w-11 rounded-full object-cover brightness-90"
                     loading="lazy"
                     draggable={false}
                   />
                   <div>
-                    <p className="text-sm font-semibold text-champagne">{t.name}</p>
-                    <p className="text-xs text-sage">{t.role}</p>
+                    <p className="text-sm font-bold tracking-tight text-white">{t.name}</p>
+                    <p className="text-xs text-mute">{t.role}</p>
                   </div>
                 </div>
                 <p
-                  className="font-display text-lg leading-snug text-champagne/95 italic sm:text-xl"
+                  className="text-base leading-snug text-white/95 sm:text-lg"
                   dangerouslySetInnerHTML={{ __html: `«${t.quote}»` }}
                 />
               </motion.li>

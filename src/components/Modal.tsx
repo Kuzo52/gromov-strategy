@@ -27,7 +27,10 @@ export function Modal({ open, onClose }: ModalProps) {
       {open && (
         <motion.div
           className="fixed inset-0 z-[100] flex items-center justify-center px-4"
-          style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
+          style={{
+            paddingTop: 'env(safe-area-inset-top)',
+            paddingBottom: 'env(safe-area-inset-bottom)',
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -36,7 +39,7 @@ export function Modal({ open, onClose }: ModalProps) {
           <button
             type="button"
             aria-label="Закрыть окно"
-            className="absolute inset-0 bg-onyx/70 backdrop-blur-xl"
+            className="absolute inset-0 bg-onyx/75 backdrop-blur-xl"
             onClick={onClose}
           />
 
@@ -48,29 +51,31 @@ export function Modal({ open, onClose }: ModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 8 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 w-full max-w-md overflow-hidden rounded-[24px] border border-champagne/12 bg-pine/90 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.55)] backdrop-blur-2xl sm:p-8"
+            className="relative z-10 w-full max-w-md overflow-hidden rounded-[24px] border border-white/12 bg-pine/95 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.55)] backdrop-blur-2xl sm:p-7"
           >
             <div
-              className="pointer-events-none absolute -top-16 right-0 h-40 w-40 rounded-full opacity-50 blur-3xl"
-              style={{ background: 'radial-gradient(circle, rgba(0,255,133,0.25), transparent 70%)' }}
+              className="pointer-events-none absolute -top-16 right-0 h-40 w-40 rounded-full opacity-60 blur-3xl"
+              style={{
+                background: 'radial-gradient(circle, rgba(204,255,0,0.28), transparent 70%)',
+              }}
               aria-hidden
             />
 
-            <p className="text-xs font-semibold tracking-[0.2em] text-cyber uppercase">Confirmed</p>
+            <p className="text-xs font-bold tracking-tighter text-lime lowercase">заявка принята</p>
             <h2
               id="thanks-title"
-              className="mt-3 font-display text-2xl font-semibold text-champagne text-balance sm:text-3xl"
+              className="mt-2 font-display text-2xl font-black tracking-tighter text-white lowercase text-balance sm:text-3xl"
             >
-              Thank you for your application! Mark will contact you shortly.
+              спасибо за&nbsp;заявку! марк свяжется с&nbsp;вами в&nbsp;ближайшее время.
             </h2>
-            <p className="mt-3 text-sm text-mist">
-              Заявка принята. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.
+            <p className="mt-2.5 text-sm text-mist">
+              Мы&nbsp;уже получили ваши данные и&nbsp;свяжемся для&nbsp;подтверждения разбора.
             </p>
 
             <button
               type="button"
               onClick={onClose}
-              className="touch-target mt-6 inline-flex w-full items-center justify-center rounded-[12px] bg-champagne px-4 text-sm font-semibold text-onyx transition-transform duration-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-champagne/90 active:scale-[0.97]"
+              className="touch-target mt-5 inline-flex w-full items-center justify-center rounded-[12px] bg-lime px-4 text-sm font-extrabold tracking-tight text-onyx transition-transform duration-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:brightness-110 active:scale-[0.97]"
             >
               Закрыть
             </button>

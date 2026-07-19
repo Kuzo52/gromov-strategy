@@ -3,10 +3,10 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { scrollToId } from '../lib/scroll'
 
 const NAV = [
-  { href: 'bio', label: 'Expertise' },
-  { href: 'services', label: 'Services' },
-  { href: 'testimonials', label: 'Reviews' },
-  { href: 'contact', label: 'Contact' },
+  { href: 'bio', label: 'обо мне' },
+  { href: 'services', label: 'услуги' },
+  { href: 'testimonials', label: 'отзывы' },
+  { href: 'contact', label: 'контакт' },
 ] as const
 
 export function Header() {
@@ -36,24 +36,24 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background,backdrop-filter,border-color] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${
         scrolled || open
-          ? 'border-b border-champagne/10 bg-onyx/70 backdrop-blur-xl'
+          ? 'border-b border-white/10 bg-onyx/75 backdrop-blur-md'
           : 'border-b border-transparent bg-transparent'
       }`}
       style={{ paddingTop: 'env(safe-area-inset-top)' }}
     >
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:h-16 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6 lg:px-8">
         <a
           href="#hero"
           onClick={(e) => {
             e.preventDefault()
             go('hero')
           }}
-          className="touch-target inline-flex items-center font-display text-[1.05rem] font-semibold tracking-[0.14em] text-champagne transition-colors duration-300 hover:text-cyber sm:text-lg"
+          className="touch-target inline-flex items-center font-display text-sm font-extrabold tracking-tighter text-white transition-colors duration-300 hover:text-lime sm:text-base"
         >
-          GROMOV STRATEGY
+          ГРОМОВ СТРАТЕГИЯ
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Основная навигация">
+        <nav className="hidden items-center gap-7 md:flex" aria-label="Основная навигация">
           {NAV.map((item) => (
             <a
               key={item.href}
@@ -62,7 +62,7 @@ export function Header() {
                 e.preventDefault()
                 go(item.href)
               }}
-              className="touch-target inline-flex items-center text-sm font-medium text-mist transition-colors duration-300 hover:text-champagne"
+              className="touch-target inline-flex items-center text-sm font-semibold tracking-tight text-mist lowercase transition-colors duration-300 hover:text-white"
             >
               {item.label}
             </a>
@@ -73,14 +73,14 @@ export function Header() {
           <button
             type="button"
             onClick={() => go('contact')}
-            className="glow-gold touch-target hidden items-center rounded-[12px] bg-champagne/95 px-4 text-sm font-semibold text-onyx transition-transform duration-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-champagne active:scale-[0.97] sm:inline-flex"
+            className="glow-lime touch-target hidden items-center rounded-[12px] bg-lime px-4 text-sm font-extrabold tracking-tight text-onyx transition-transform duration-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:brightness-110 active:scale-[0.97] sm:inline-flex"
           >
-            Book a Call
+            записаться
           </button>
 
           <button
             type="button"
-            className="touch-target inline-flex items-center justify-center rounded-[12px] border border-champagne/15 px-3 text-champagne md:hidden"
+            className="touch-target inline-flex items-center justify-center rounded-[12px] border border-white/15 px-3 text-white md:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
@@ -115,10 +115,10 @@ export function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-            className="border-t border-champagne/10 bg-onyx/95 backdrop-blur-xl md:hidden"
+            className="border-t border-white/10 bg-onyx/95 backdrop-blur-md md:hidden"
             aria-label="Мобильная навигация"
           >
-            <div className="flex flex-col gap-1 px-4 py-3">
+            <div className="flex flex-col gap-1 px-4 py-2">
               {NAV.map((item) => (
                 <a
                   key={item.href}
@@ -127,7 +127,7 @@ export function Header() {
                     e.preventDefault()
                     go(item.href)
                   }}
-                  className="touch-target flex items-center rounded-[12px] px-3 text-base font-medium text-champagne transition-colors hover:bg-champagne/5"
+                  className="touch-target flex items-center rounded-[12px] px-3 text-base font-semibold tracking-tight text-white lowercase transition-colors hover:bg-white/5"
                 >
                   {item.label}
                 </a>
@@ -135,9 +135,9 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => go('contact')}
-                className="glow-gold touch-target mt-2 inline-flex items-center justify-center rounded-[12px] bg-champagne px-4 text-sm font-semibold text-onyx active:scale-[0.97]"
+                className="glow-lime touch-target mt-1 inline-flex items-center justify-center rounded-[12px] bg-lime px-4 text-sm font-extrabold tracking-tight text-onyx active:scale-[0.97]"
               >
-                Book a Call
+                записаться
               </button>
             </div>
           </motion.nav>

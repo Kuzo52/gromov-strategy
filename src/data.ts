@@ -30,53 +30,68 @@ export const IMAGES = {
   glass: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=80',
 } as const
 
+export const HERO_METRICS = [
+  {
+    value: 'ROI +420%',
+    label: 'Средний рост прибыли клиентов',
+  },
+  {
+    value: '140+ систем',
+    label: 'Выстроено регламентов и&nbsp;процессов',
+  },
+  {
+    value: '500 млн+',
+    label: 'Суммарный оборот компаний',
+  },
+] as const
+
 export const CREDENTIALS: Credential[] = [
   {
     label: 'Опыт',
     value: '12+ лет',
-    detail: 'Стратегия роста, M&A и операционная архитектура в&nbsp;B2B и&nbsp;tech.',
+    detail: 'Масштабирование бизнеса, сделки и&nbsp;операционные системы роста.',
   },
   {
-    label: 'ROI клиентов',
-    value: '×3.4',
-    detail: 'Средний мультипликатор выручки за&nbsp;цикл mentorship-программ.',
+    label: 'Результат',
+    value: '+420% ROI',
+    detail: 'Средний прирост чистой прибыли клиентов за&nbsp;цикл работы.',
   },
   {
-    label: 'Проекты',
-    value: '80+',
-    detail: 'Масштабированные компании от&nbsp;seed до&nbsp;международной экспансии.',
+    label: 'Системы',
+    value: '140+',
+    detail: 'Регламенты, роли и&nbsp;процессы, которые работают без&nbsp;ручного управления.',
   },
   {
-    label: 'Капитал',
-    value: '$420M+',
-    detail: 'Сопровождённые раунды и&nbsp;стратегические сделки под&nbsp;управлением.',
+    label: 'Оборот',
+    value: '500 млн+',
+    detail: 'Суммарный оборот компаний под&nbsp;стратегическим сопровождением.',
   },
 ]
 
 export const SERVICES: ServicePlan[] = [
   {
     id: 'session',
-    title: 'Strategy Session',
-    price: '$1,200',
+    title: 'Стратегическая сессия',
+    price: '120 000 ₽',
     duration: '90 минут',
-    description: 'Точечный разбор узкого места: продукт, unit-экономика или&nbsp;go-to-market.',
-    features: ['Диагностика модели', 'Приоритизация рычагов', 'План на&nbsp;30 дней'],
+    description: 'Жёсткий разбор узкого места: прибыль, воронка или&nbsp;управляемость команды.',
+    features: ['Диагностика модели', 'Приоритетные рычаги роста', 'План на&nbsp;30 дней'],
   },
   {
     id: 'mentorship',
-    title: '3-Month Mentorship',
-    price: '$9,800',
+    title: 'Менторство 3 месяца',
+    price: '890 000 ₽',
     duration: '12 недель',
-    description: 'Глубокое сопровождение фаундера: система решений, команда и&nbsp;темп роста.',
-    features: ['Еженедельные сессии', 'Аудит процессов', 'Доступ в&nbsp;async-канале'],
+    description: 'Полное сопровождение основателя: система решений, команда и&nbsp;темп масштаба.',
+    features: ['Еженедельные сессии', 'Аудит процессов', 'Постоянный канал связи'],
   },
   {
     id: 'workshop',
-    title: 'Corporate Workshop',
-    price: 'Custom',
+    title: 'Корпоративный воркшоп',
+    price: 'По запросу',
     duration: '1–2 дня',
-    description: 'Интенсив для C-level и&nbsp;leadership-команд: стратегия, структура, execution.',
-    features: ['Фасилитация на&nbsp;месте', 'Стратегическая карта', 'Follow-up отчёт'],
+    description: 'Интенсив для топ-команды: единая стратегия, структура и&nbsp;план исполнения.',
+    features: ['Фасилитация на&nbsp;месте', 'Стратегическая карта', 'Отчёт и&nbsp;следующие шаги'],
   },
 ]
 
@@ -86,31 +101,31 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Анна Воробьёва',
     role: 'CEO, LatticePay',
     quote:
-      'За квартал выстроили систему приоритетов. Выручка выросла на&nbsp;68%, а&nbsp;хаос в&nbsp;решениях ушёл.',
+      'За квартал выстроили систему приоритетов. Выручка выросла на&nbsp;68%, хаос в&nbsp;решениях ушёл.',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
   },
   {
     id: '2',
-    name: 'Darius Chen',
-    role: 'Managing Partner, NorthPeak',
+    name: 'Даниил Чернов',
+    role: 'Управляющий партнёр, NorthPeak',
     quote:
-      'Mark видит архитектуру бизнеса раньше цифр. Наш портфельный актив закрыл Series&nbsp;B с&nbsp;чистой историей роста.',
+      'Марк видит архитектуру бизнеса раньше цифр. Портфельный актив закрыл раунд с&nbsp;чистой историей роста.',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80',
   },
   {
     id: '3',
     name: 'Елена Мартынова',
-    role: 'Founder, Atelier Nova',
+    role: 'Основатель, Atelier Nova',
     quote:
-      'Mentorship дал не&nbsp;мотивацию, а&nbsp;операционную дисциплину. Масштаб без потери маржи — редкость.',
+      'Менторство дало не&nbsp;мотивацию, а&nbsp;операционную дисциплину. Масштаб без потери маржи — редкость.',
     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
   },
   {
     id: '4',
-    name: 'Igor Belonogov',
+    name: 'Игорь Белоногов',
     role: 'COO, Helix Labs',
     quote:
-      'Workshop для топ-команды заменил три месяца внутренних споров. Вышли с&nbsp;единой картой действий.',
+      'Воркшоп для топ-команды заменил три месяца споров. Вышли с&nbsp;единой картой действий.',
     image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80',
   },
 ]

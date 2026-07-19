@@ -29,6 +29,9 @@ function pad(n: number): string {
   return String(n).padStart(2, '0')
 }
 
+const inputClass =
+  'touch-target w-full rounded-[12px] border border-white/12 bg-onyx/60 px-3 text-sm text-white outline-none transition-[border-color,box-shadow] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] focus:border-lime focus:shadow-[0_0_0_3px_rgba(204,255,0,0.18)]'
+
 export function Contact({ selected, onSuccess }: ContactProps) {
   const deadline = useMemo(() => getDeadline(), [])
   const [now, setNow] = useState(() => Date.now())
@@ -55,7 +58,7 @@ export function Contact({ selected, onSuccess }: ContactProps) {
     if (!/^\+?\d{10,15}$/.test(phone)) next.phone = 'Введите корректный телефон'
     const tg = form.telegram.replace(/^@/, '').trim()
     if (!/^[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(tg)) {
-      next.telegram = 'Username: 5–32 символа, латиница'
+      next.telegram = 'Логин: 5–32 символа, латиница'
     }
     return next
   }
@@ -70,59 +73,62 @@ export function Contact({ selected, onSuccess }: ContactProps) {
   }
 
   const units = [
-    { label: 'Дни', value: pad(days) },
-    { label: 'Часы', value: pad(hours) },
-    { label: 'Мин', value: pad(minutes) },
-    { label: 'Сек', value: pad(seconds) },
+    { label: 'дни', value: pad(days) },
+    { label: 'часы', value: pad(hours) },
+    { label: 'мин', value: pad(minutes) },
+    { label: 'сек', value: pad(seconds) },
   ]
 
   return (
-    <section id="contact" className="relative py-8 sm:py-14 md:py-20">
+    <section id="contact" className="relative section-y">
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyber/40 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-lime/45 to-transparent"
         aria-hidden
       />
 
-      <div className="mx-auto grid max-w-6xl gap-6 px-4 sm:gap-8 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12 lg:px-8">
+      <div className="mx-auto grid max-w-6xl gap-4 px-4 sm:gap-6 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10 lg:px-8">
         <div>
-          <p className="mb-2 text-xs font-semibold tracking-[0.2em] text-cyber uppercase sm:mb-3">
-            Contact &amp; Timer
+          <p className="mb-1.5 text-xs font-bold tracking-tighter text-lime lowercase sm:mb-2">
+            заявка
           </p>
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-champagne text-balance sm:text-4xl md:text-5xl">
-            Забронируйте место
+          <h2 className="font-display text-3xl font-black tracking-tighter text-white lowercase text-balance sm:text-4xl md:text-5xl">
+            забронируйте место
           </h2>
-          <p className="mt-2 text-sm text-mist sm:mt-3 sm:text-base">
-            Ограниченный слот консультаций. Таймер обновляется в&nbsp;реальном времени.
+          <p className="mt-1.5 text-sm text-mist sm:mt-2 sm:text-base">
+            Ограниченный слот разборов. Таймер обновляется в&nbsp;реальном времени.
           </p>
 
-          <div className="mt-5 grid grid-cols-4 gap-2 sm:mt-6 sm:gap-3" aria-live="polite">
+          <div className="mt-3 grid grid-cols-4 gap-2 sm:mt-5 sm:gap-2.5" aria-live="polite">
             {units.map((u) => (
-              <div key={u.label} className="glass-plate rounded-[16px] px-2 py-3 text-center sm:rounded-[20px] sm:py-4">
-                <p className="font-display text-2xl font-semibold tabular-nums text-champagne sm:text-3xl">
+              <div
+                key={u.label}
+                className="glass-dense rounded-[14px] px-1.5 py-2.5 text-center sm:rounded-[18px] sm:py-3.5"
+              >
+                <p className="font-display text-xl font-black tracking-tighter tabular-nums text-white sm:text-3xl">
                   {u.value}
                 </p>
-                <p className="mt-1 text-[10px] tracking-[0.14em] text-sage uppercase sm:text-xs">
+                <p className="mt-0.5 text-[10px] font-semibold tracking-tight text-mute lowercase sm:text-xs">
                   {u.label}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-5 flex flex-wrap gap-3 sm:mt-6">
+          <div className="mt-3 flex flex-wrap gap-2.5 sm:mt-5">
             <a
               href={CONTACTS.telegram}
               target="_blank"
               rel="noopener noreferrer"
-              className="touch-target inline-flex items-center justify-center gap-2 rounded-[12px] border border-champagne/15 bg-champagne/5 px-4 text-sm font-medium text-champagne transition-colors duration-300 hover:border-cyber/50 hover:text-cyber active:scale-[0.97]"
+              className="touch-target inline-flex items-center justify-center gap-2 rounded-[12px] border border-white/15 bg-white/5 px-4 text-sm font-semibold text-white transition-colors duration-300 hover:border-lime/50 hover:text-lime active:scale-[0.97]"
             >
               <TelegramIcon />
-              Telegram
+              Телеграм
             </a>
             <a
               href={CONTACTS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="touch-target inline-flex items-center justify-center gap-2 rounded-[12px] border border-champagne/15 bg-champagne/5 px-4 text-sm font-medium text-champagne transition-colors duration-300 hover:border-cyber/50 hover:text-cyber active:scale-[0.97]"
+              className="touch-target inline-flex items-center justify-center gap-2 rounded-[12px] border border-white/15 bg-white/5 px-4 text-sm font-semibold text-white transition-colors duration-300 hover:border-lime/50 hover:text-lime active:scale-[0.97]"
             >
               <WhatsAppIcon />
               WhatsApp
@@ -130,20 +136,16 @@ export function Contact({ selected, onSuccess }: ContactProps) {
           </div>
         </div>
 
-        <form
-          onSubmit={onSubmit}
-          noValidate
-          className="glass-plate rounded-[24px] p-5 sm:p-6 md:p-7"
-        >
+        <form onSubmit={onSubmit} noValidate className="glass-dense rounded-[24px] p-4 sm:p-6">
           {selectedLabel && (
-            <p className="mb-4 rounded-[12px] border border-cyber/30 bg-cyber/10 px-3 py-2 text-sm text-cyber">
-              Выбранный тариф: <span className="font-semibold">{selectedLabel}</span>
+            <p className="mb-3 rounded-[12px] border border-lime/35 bg-lime/10 px-3 py-2 text-sm text-lime">
+              Выбранный тариф: <span className="font-bold">{selectedLabel}</span>
             </p>
           )}
 
-          <label className="mb-3 block sm:mb-4">
-            <span className="mb-1.5 block text-xs font-medium tracking-wide text-sage uppercase">
-              Имя
+          <label className="mb-2.5 block sm:mb-3.5">
+            <span className="mb-1.5 block text-xs font-semibold tracking-tight text-mute lowercase">
+              имя
             </span>
             <input
               type="text"
@@ -151,15 +153,15 @@ export function Contact({ selected, onSuccess }: ContactProps) {
               autoComplete="name"
               value={form.name}
               onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-              className="touch-target w-full rounded-[12px] border border-champagne/12 bg-onyx/50 px-3 text-sm text-champagne outline-none transition-[border-color,box-shadow] duration-300 focus:border-cyber focus:shadow-[0_0_0_3px_rgba(0,255,133,0.15)]"
+              className={inputClass}
               placeholder="Как к вам обращаться"
             />
             {errors.name && <span className="mt-1 block text-xs text-red-300">{errors.name}</span>}
           </label>
 
-          <label className="mb-3 block sm:mb-4">
-            <span className="mb-1.5 block text-xs font-medium tracking-wide text-sage uppercase">
-              Телефон
+          <label className="mb-2.5 block sm:mb-3.5">
+            <span className="mb-1.5 block text-xs font-semibold tracking-tight text-mute lowercase">
+              телефон
             </span>
             <input
               type="tel"
@@ -167,18 +169,18 @@ export function Contact({ selected, onSuccess }: ContactProps) {
               autoComplete="tel"
               value={form.phone}
               onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-              className="touch-target w-full rounded-[12px] border border-champagne/12 bg-onyx/50 px-3 text-sm text-champagne outline-none transition-[border-color,box-shadow] duration-300 focus:border-cyber focus:shadow-[0_0_0_3px_rgba(0,255,133,0.15)]"
+              className={inputClass}
               placeholder="+7 900 000-00-00"
             />
             {errors.phone && <span className="mt-1 block text-xs text-red-300">{errors.phone}</span>}
           </label>
 
-          <label className="mb-5 block sm:mb-6">
-            <span className="mb-1.5 block text-xs font-medium tracking-wide text-sage uppercase">
+          <label className="mb-4 block sm:mb-5">
+            <span className="mb-1.5 block text-xs font-semibold tracking-tight text-mute">
               Telegram
             </span>
             <div className="relative">
-              <span className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 font-medium text-cyber">
+              <span className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 font-bold text-lime">
                 @
               </span>
               <input
@@ -189,7 +191,7 @@ export function Contact({ selected, onSuccess }: ContactProps) {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, telegram: e.target.value.replace(/^@/, '') }))
                 }
-                className="touch-target w-full rounded-[12px] border border-champagne/12 bg-onyx/50 py-0 pr-3 pl-8 text-sm text-champagne outline-none transition-[border-color,box-shadow] duration-300 focus:border-cyber focus:shadow-[0_0_0_3px_rgba(0,255,133,0.15)]"
+                className={`${inputClass} pr-3 pl-8`}
                 placeholder="username"
               />
             </div>
@@ -200,7 +202,7 @@ export function Contact({ selected, onSuccess }: ContactProps) {
 
           <button
             type="submit"
-            className="glow-cyber touch-target inline-flex w-full items-center justify-center rounded-[12px] bg-cyber px-4 text-sm font-semibold text-onyx transition-transform duration-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:brightness-110 active:scale-[0.97]"
+            className="glow-lime touch-target inline-flex w-full items-center justify-center rounded-[12px] bg-lime px-4 text-sm font-extrabold tracking-tight text-onyx transition-transform duration-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:brightness-110 active:scale-[0.97]"
           >
             Оставить заявку
           </button>

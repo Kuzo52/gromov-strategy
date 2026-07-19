@@ -17,12 +17,12 @@ function App() {
   return (
     <div className="relative min-h-dvh bg-onyx">
       <div
-        className="pointer-events-none fixed inset-0 opacity-[0.12]"
+        className="pointer-events-none fixed inset-0 opacity-[0.1]"
         style={{
           backgroundImage: `url(${IMAGES.glass})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'brightness(0.4) saturate(0.6)',
+          filter: 'brightness(0.35) saturate(0.5)',
         }}
         aria-hidden
       />
@@ -30,7 +30,7 @@ function App() {
         className="pointer-events-none fixed inset-0"
         style={{
           background:
-            'radial-gradient(ellipse 70% 50% at 10% 20%, rgba(0,255,133,0.06), transparent 50%), radial-gradient(ellipse 60% 40% at 90% 80%, rgba(212,175,106,0.05), transparent 45%)',
+            'radial-gradient(ellipse 70% 50% at 8% 18%, rgba(204,255,0,0.07), transparent 50%), radial-gradient(ellipse 55% 40% at 92% 78%, rgba(204,255,0,0.04), transparent 45%)',
         }}
         aria-hidden
       />
