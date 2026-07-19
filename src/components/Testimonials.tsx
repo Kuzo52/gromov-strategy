@@ -28,14 +28,12 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="relative overflow-hidden section-y">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-3 sm:mb-6 md:mb-8">
-          <p className="mb-1.5 text-xs font-bold tracking-tighter text-lime lowercase sm:mb-2">
-            отзывы
-          </p>
+        <div className="section-head">
+          <p className="mb-3 text-sm font-medium text-mist">Отзывы</p>
           <h2 className="font-display text-3xl font-black tracking-tighter text-white lowercase text-balance sm:text-4xl md:text-5xl">
             что говорят клиенты
           </h2>
-          <p className="mt-1.5 text-sm text-mist sm:mt-2 sm:text-base">
+          <p className="mt-4 text-base font-normal text-mist">
             Свайпните или&nbsp;перетащите карусель.
           </p>
         </div>
@@ -47,7 +45,7 @@ export function Testimonials() {
             dragConstraints={{ left: dragLeft, right: 0 }}
             dragElastic={0.14}
             dragTransition={{ bounceStiffness: 260, bounceDamping: 26 }}
-            className="flex cursor-grab gap-2.5 active:cursor-grabbing sm:gap-3"
+            className="flex cursor-grab gap-3 active:cursor-grabbing sm:gap-4"
             style={{ touchAction: 'pan-y' }}
           >
             {TESTIMONIALS.map((t, i) => (
@@ -57,9 +55,9 @@ export function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
-                className="glass-dense w-[min(86vw,320px)] shrink-0 rounded-[24px] p-4 select-none sm:w-[340px] sm:p-5"
+                className="glass-dense w-[min(86vw,320px)] shrink-0 rounded-[24px] p-5 select-none sm:w-[340px] sm:p-6"
               >
-                <div className="mb-3 flex items-center gap-3">
+                <div className="mb-4 flex items-center gap-3">
                   <img
                     src={t.image}
                     alt={t.name}
@@ -68,12 +66,12 @@ export function Testimonials() {
                     draggable={false}
                   />
                   <div>
-                    <p className="text-sm font-bold tracking-tight text-white">{t.name}</p>
-                    <p className="text-xs text-mute">{t.role}</p>
+                    <p className="text-sm font-semibold text-white">{t.name}</p>
+                    <p className="text-xs font-medium text-mute">{t.role}</p>
                   </div>
                 </div>
                 <p
-                  className="text-base leading-snug text-white/95 sm:text-lg"
+                  className="text-base font-normal leading-relaxed text-white/90"
                   dangerouslySetInnerHTML={{ __html: `«${t.quote}»` }}
                 />
               </motion.li>

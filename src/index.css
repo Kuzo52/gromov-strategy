@@ -13,8 +13,8 @@
   --color-sage: #7a847e;
   --color-gold: #ccff00;
   --color-gold-soft: #ccff00;
-  --font-display: "Unbounded", "Montserrat", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Unbounded", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --ease-snappy: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-fluid: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
@@ -125,18 +125,40 @@
   }
 
   .section-y {
-    padding-block: 1.5rem;
+    padding-block: 4rem;
   }
 
   @media (min-width: 640px) {
     .section-y {
-      padding-block: 2.5rem;
+      padding-block: 5rem;
     }
   }
 
   @media (min-width: 768px) {
     .section-y {
-      padding-block: 4rem;
+      padding-block: 8rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-y {
+      padding-block: 10rem;
+    }
+  }
+
+  .section-head {
+    margin-bottom: 1.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-head {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .section-head {
+      margin-bottom: 3.5rem;
     }
   }
 }

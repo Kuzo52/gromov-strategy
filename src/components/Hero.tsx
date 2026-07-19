@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100dvh] items-end overflow-hidden pt-16 pb-5 sm:items-center sm:pt-20 sm:pb-10 md:pb-14"
+      className="relative flex min-h-[100dvh] items-end overflow-hidden pt-20 pb-10 sm:items-center sm:pt-24 sm:pb-16 md:pb-24"
     >
       <img
         src={IMAGES.hero}
@@ -32,16 +32,16 @@ export function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-2 font-display text-xs font-extrabold tracking-tighter text-lime lowercase sm:mb-3 sm:text-sm"
+          className="mb-3 text-sm font-medium text-mist sm:mb-4 sm:text-base"
         >
-          марк громов · стратегия роста
+          Марк Громов · стратегия роста
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-[2.15rem] leading-[1.02] font-black tracking-tighter text-white lowercase text-balance sm:text-5xl md:text-6xl lg:text-7xl"
+          className="font-display text-[2.15rem] leading-[1.05] font-black tracking-tighter text-white lowercase text-balance sm:text-5xl md:text-6xl lg:text-7xl"
         >
           масштабирование бизнеса.
           <br />
@@ -52,7 +52,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-3 max-w-2xl text-sm leading-relaxed text-mist sm:mt-4 sm:text-base md:text-lg"
+          className="mt-4 max-w-2xl text-base font-normal leading-relaxed text-mist sm:mt-6 sm:text-lg"
         >
           Стратегический консалтинг для&nbsp;основателей компаний, инвесторов и&nbsp;топ-менеджеров.
           Увеличиваем чистую прибыль и&nbsp;убираем хаос из&nbsp;операционки.
@@ -62,14 +62,14 @@ export function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-4 sm:mt-6"
+          className="mt-6 sm:mt-8"
         >
           <button
             type="button"
             onClick={() => scrollToId('contact')}
-            className="glow-lime touch-target inline-flex items-center justify-center rounded-[12px] bg-lime px-5 text-sm font-extrabold tracking-tight text-onyx transition-transform duration-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:brightness-110 active:scale-[0.97] sm:px-7 sm:text-base"
+            className="glow-lime touch-target inline-flex items-center justify-center rounded-[12px] bg-lime px-6 text-sm font-semibold text-onyx transition-transform duration-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:brightness-110 active:scale-[0.97] sm:px-7 sm:text-base"
           >
-            записаться на разбор
+            Записаться на разбор
           </button>
         </motion.div>
 
@@ -77,15 +77,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-5 grid grid-cols-1 gap-2 border-t border-white/10 pt-4 sm:mt-7 sm:grid-cols-3 sm:gap-3 sm:pt-5"
+          className="mt-8 grid grid-cols-1 gap-3 border-t border-white/10 pt-6 sm:mt-10 sm:grid-cols-3 sm:gap-4 sm:pt-8"
         >
           {HERO_METRICS.map((m) => (
-            <li key={m.value} className="glass-dense rounded-[16px] px-3 py-3 sm:rounded-[20px] sm:px-4 sm:py-4">
-              <p className="font-display text-xl font-black tracking-tighter text-lime lowercase sm:text-2xl">
+            <li key={m.value} className="glass-dense rounded-[16px] px-4 py-4 sm:rounded-[20px] sm:px-5 sm:py-5">
+              <p className="font-display text-xl font-black tracking-tighter text-lime sm:text-2xl">
                 {m.value}
               </p>
               <p
-                className="mt-1 text-xs leading-snug text-mist sm:text-sm"
+                className="mt-2 text-sm font-normal leading-snug text-mist"
                 dangerouslySetInnerHTML={{ __html: m.label }}
               />
             </li>

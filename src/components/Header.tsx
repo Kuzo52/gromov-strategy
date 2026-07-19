@@ -3,10 +3,10 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { scrollToId } from '../lib/scroll'
 
 const NAV = [
-  { href: 'bio', label: 'обо мне' },
-  { href: 'services', label: 'услуги' },
-  { href: 'testimonials', label: 'отзывы' },
-  { href: 'contact', label: 'контакт' },
+  { href: 'bio', label: 'Обо мне' },
+  { href: 'services', label: 'Услуги' },
+  { href: 'testimonials', label: 'Отзывы' },
+  { href: 'contact', label: 'Контакт' },
 ] as const
 
 export function Header() {
@@ -62,7 +62,7 @@ export function Header() {
                 e.preventDefault()
                 go(item.href)
               }}
-              className="touch-target inline-flex items-center text-sm font-semibold tracking-tight text-mist lowercase transition-colors duration-300 hover:text-white"
+              className="touch-target inline-flex items-center text-sm font-medium text-mist transition-colors duration-300 hover:text-white"
             >
               {item.label}
             </a>
@@ -73,9 +73,9 @@ export function Header() {
           <button
             type="button"
             onClick={() => go('contact')}
-            className="glow-lime touch-target hidden items-center rounded-[12px] bg-lime px-4 text-sm font-extrabold tracking-tight text-onyx transition-transform duration-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:brightness-110 active:scale-[0.97] sm:inline-flex"
+            className="glow-lime touch-target hidden items-center rounded-[12px] bg-lime px-4 text-sm font-semibold text-onyx transition-transform duration-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:brightness-110 active:scale-[0.97] sm:inline-flex"
           >
-            записаться
+            Записаться
           </button>
 
           <button
@@ -118,7 +118,7 @@ export function Header() {
             className="border-t border-white/10 bg-onyx/95 backdrop-blur-md md:hidden"
             aria-label="Мобильная навигация"
           >
-            <div className="flex flex-col gap-1 px-4 py-2">
+            <div className="flex flex-col gap-1 px-4 py-3">
               {NAV.map((item) => (
                 <a
                   key={item.href}
@@ -127,7 +127,7 @@ export function Header() {
                     e.preventDefault()
                     go(item.href)
                   }}
-                  className="touch-target flex items-center rounded-[12px] px-3 text-base font-semibold tracking-tight text-white lowercase transition-colors hover:bg-white/5"
+                  className="touch-target flex items-center rounded-[12px] px-3 text-base font-medium text-white transition-colors hover:bg-white/5"
                 >
                   {item.label}
                 </a>
@@ -135,9 +135,9 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => go('contact')}
-                className="glow-lime touch-target mt-1 inline-flex items-center justify-center rounded-[12px] bg-lime px-4 text-sm font-extrabold tracking-tight text-onyx active:scale-[0.97]"
+                className="glow-lime touch-target mt-2 inline-flex items-center justify-center rounded-[12px] bg-lime px-4 text-sm font-semibold text-onyx active:scale-[0.97]"
               >
-                записаться
+                Записаться
               </button>
             </div>
           </motion.nav>
