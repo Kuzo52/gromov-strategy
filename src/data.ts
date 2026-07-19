@@ -25,7 +25,7 @@ export interface Testimonial {
 
 export const IMAGES = {
   hero: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80',
-  bio: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80',
+  portrait: `${import.meta.env.BASE_URL}images/mark-gromov.png`,
   marble: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80',
   glass: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=80',
 } as const

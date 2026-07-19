@@ -16,49 +16,67 @@ export function Bio() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-onyx via-onyx/95 to-onyx" aria-hidden />
 
-      <div className="relative mx-auto grid max-w-6xl gap-8 px-4 sm:gap-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-8">
+      <div className="relative mx-auto grid max-w-6xl gap-8 px-4 sm:gap-12 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start lg:gap-16 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="relative overflow-hidden rounded-[24px] border border-white/10 bg-pine/40 shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
+        >
+          <img
+            src={IMAGES.portrait}
+            alt="Марк Громов — стратегический консультант"
+            className="aspect-[4/5] w-full object-cover object-[50%_18%] brightness-[0.92] contrast-105 sm:aspect-[5/6]"
+            loading="lazy"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-onyx via-onyx/10 to-transparent" />
+          <div className="absolute right-0 bottom-0 left-0 p-5 sm:p-6">
+            <p className="font-display text-xl font-black tracking-tighter text-white lowercase sm:text-2xl">
+              марк громов
+            </p>
+            <p className="mt-1 text-sm font-medium text-mist">
+              Стратегический консалтинг и&nbsp;масштабирование
+            </p>
+          </div>
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-lime/40 to-transparent"
+            aria-hidden
+          />
+        </motion.div>
+
         <div>
           <p className="mb-3 text-sm font-medium text-mist">Обо мне</p>
           <h2 className="font-display text-3xl font-black tracking-tighter text-white lowercase text-balance sm:text-4xl md:text-5xl">
-            марк громов
+            система вместо хаоса
           </h2>
           <p className="mt-4 max-w-lg text-base font-normal leading-relaxed text-mist sm:mt-5">
             Стратег по&nbsp;масштабированию для&nbsp;компаний, где нужна скорость без&nbsp;потери
             контроля. Выстраиваю систему прибыли, команды и&nbsp;управляемости.
           </p>
 
-          <div className="relative mt-6 overflow-hidden rounded-[20px] sm:mt-8">
-            <img
-              src={IMAGES.bio}
-              alt="Минималистичная архитектура делового центра"
-              className="aspect-[16/10] w-full object-cover brightness-[0.5] contrast-110"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-onyx via-transparent to-transparent" />
-          </div>
+          <ul className="mt-6 grid grid-cols-1 gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
+            {CREDENTIALS.map((item, i) => (
+              <motion.li
+                key={item.label}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.45, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                className="glass-dense rounded-[20px] p-5 transition-[box-shadow,border-color,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-lime/60 hover:shadow-[0_0_0_1px_rgba(204,255,0,0.45),0_0_36px_rgba(204,255,0,0.18)] sm:p-6"
+              >
+                <p className="text-sm font-medium text-mute">{item.label}</p>
+                <p className="mt-2 font-display text-2xl font-black tracking-tighter text-lime sm:text-3xl">
+                  {item.value}
+                </p>
+                <p
+                  className="mt-2 text-sm font-normal leading-relaxed text-mist"
+                  dangerouslySetInnerHTML={{ __html: item.detail }}
+                />
+              </motion.li>
+            ))}
+          </ul>
         </div>
-
-        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
-          {CREDENTIALS.map((item, i) => (
-            <motion.li
-              key={item.label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.45, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
-              className="glass-dense rounded-[20px] p-5 transition-[box-shadow,border-color,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-lime/60 hover:shadow-[0_0_0_1px_rgba(204,255,0,0.45),0_0_36px_rgba(204,255,0,0.18)] sm:p-6"
-            >
-              <p className="text-sm font-medium text-mute">{item.label}</p>
-              <p className="mt-2 font-display text-2xl font-black tracking-tighter text-lime sm:text-3xl">
-                {item.value}
-              </p>
-              <p
-                className="mt-2 text-sm font-normal leading-relaxed text-mist"
-                dangerouslySetInnerHTML={{ __html: item.detail }}
-              />
-            </motion.li>
-          ))}
-        </ul>
       </div>
     </section>
   )
