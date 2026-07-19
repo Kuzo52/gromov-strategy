@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-onyx: #040d0c;
+  --color-pine: #0a1a17;
+  --color-forest: #122824;
+  --color-champagne: #fdfcf0;
+  --color-mist: #a8b8b2;
+  --color-sage: #6f857c;
+  --color-cyber: #00ff85;
+  --color-gold: #d4af6a;
+  --color-gold-soft: #c9a96e;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --ease-snappy: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-fluid: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    font-family: var(--font-sans);
+    background: var(--color-onyx);
+    color: var(--color-mist);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  #root {
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-cyber) 35%, transparent);
+    color: var(--color-champagne);
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  button,
+  a,
+  input,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cyber);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .glass {
+    background: color-mix(in srgb, var(--color-pine) 55%, transparent);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid color-mix(in srgb, var(--color-champagne) 8%, transparent);
+  }
+
+  .glass-plate {
+    background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--color-champagne) 7%, transparent),
+      color-mix(in srgb, var(--color-pine) 40%, transparent)
+    );
+    backdrop-filter: blur(22px) saturate(150%);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    border: 1px solid color-mix(in srgb, var(--color-champagne) 10%, transparent);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .glow-gold {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--color-gold) 40%, transparent),
+      0 0 24px color-mix(in srgb, var(--color-gold) 28%, transparent);
+  }
+
+  .glow-cyber {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--color-cyber) 45%, transparent),
+      0 0 28px color-mix(in srgb, var(--color-cyber) 22%, transparent);
+  }
+}
