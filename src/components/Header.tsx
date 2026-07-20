@@ -50,7 +50,7 @@ export function Header() {
           }}
           className="touch-target inline-flex items-center font-display text-sm font-extrabold tracking-tighter text-white transition-colors duration-300 hover:text-lime sm:text-base"
         >
-          ГРОМОВ СТРАТЕГИЯ
+          Gromov Strategy
         </a>
 
         <nav className="hidden items-center gap-7 md:flex" aria-label="Основная навигация">

@@ -66,7 +66,7 @@ export function Modal({ open, onClose }: ModalProps) {
               id="thanks-title"
               className="mt-3 font-display text-2xl font-black tracking-tighter text-white lowercase text-balance sm:text-3xl"
             >
-              спасибо за&nbsp;заявку! марк свяжется с&nbsp;вами в&nbsp;ближайшее время.
+              спасибо за&nbsp;заявку! Mark Gromov свяжется с&nbsp;вами в&nbsp;ближайшее время.
             </h2>
             <p className="mt-3 text-sm font-normal leading-relaxed text-mist">
               Мы&nbsp;уже получили ваши данные и&nbsp;свяжемся для&nbsp;подтверждения разбора.

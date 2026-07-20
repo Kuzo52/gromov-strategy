@@ -34,7 +34,7 @@ export function Hero() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="mb-3 text-sm font-medium text-mist sm:mb-4 sm:text-base"
         >
-          Марк Громов · стратегия роста
+          Mark Gromov · стратегия роста
         </motion.p>
 
         <motion.h1

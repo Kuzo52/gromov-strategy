@@ -109,7 +109,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Даниил Чернов',
     role: 'Управляющий партнёр, NorthPeak',
     quote:
-      'Марк видит архитектуру бизнеса раньше цифр. Портфельный актив закрыл раунд с&nbsp;чистой историей роста.',
+      'Mark видит архитектуру бизнеса раньше цифр. Портфельный актив закрыл раунд с&nbsp;чистой историей роста.',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80',
   },
   {

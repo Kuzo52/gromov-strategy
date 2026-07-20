@@ -26,14 +26,14 @@ export function Bio() {
         >
           <img
             src={IMAGES.portrait}
-            alt="Марк Громов — стратегический консультант"
+            alt="Mark Gromov — стратегический консультант"
             className="aspect-[4/5] w-full object-cover object-[50%_18%] brightness-[0.92] contrast-105 sm:aspect-[5/6]"
             loading="lazy"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-onyx via-onyx/10 to-transparent" />
           <div className="absolute right-0 bottom-0 left-0 p-5 sm:p-6">
-            <p className="font-display text-xl font-black tracking-tighter text-white lowercase sm:text-2xl">
-              марк громов
+            <p className="font-display text-xl font-black tracking-tighter text-white sm:text-2xl">
+              Mark Gromov
             </p>
             <p className="mt-1 text-sm font-medium text-mist">
               Стратегический консалтинг и&nbsp;масштабирование
